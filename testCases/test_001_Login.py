@@ -1,13 +1,6 @@
 import time
 import os
 
-from jinja2.nodes import Import
-
-
-
-import pytest
-from selenium.webdriver.support.wait import WebDriverWait
-
 from pageObjects.LoginPage import LoginPage
 from utilities import ExcelUtils
 from utilities.readProperties import ReadConfig
@@ -43,7 +36,7 @@ class Test_001_Login:
         self.open_app(self.driver)
 
         rows = ExcelUtils.getRowCount(self.path, 'login')
-        
+
 
         for r in range(2, rows + 1):
             username = ExcelUtils.readData(self.path, 'login', r, 1)

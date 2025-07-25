@@ -77,11 +77,11 @@ class Test_007_Designation:
         driver.save_screenshot("./Screenshots/Designation/4_Update_Designation.png")
         self.logger.info("*** UPDATED Designation SUCCESSFULLY ***")
 
-        # Optionally: Delete Designation
-        delete_name = ExcelUtils.readData(self.path, 'designation', 11, 2)
-        designation_page.SearchField(delete_name)
-        time.sleep(2)
-        designation_page.DeleteDesignation()
-        driver.save_screenshot("./Screenshots/Designation/5_Delete_Designation.png")
-        designation_page.DeleteConfirm()
-        time.sleep(2)
+        # # Optionally: Delete Designation
+        # delete_name = ExcelUtils.readData(self.path, 'designation', 11, 2)
+        # designation_page.SearchField(delete_name)
+        # time.sleep(2)
+        # designation_page.DeleteDesignation()
+        # driver.save_screenshot("./Screenshots/Designation/5_Delete_Designation.png")
+        # designation_page.DeleteConfirm()
+        # time.sleep(2)

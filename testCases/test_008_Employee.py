@@ -137,12 +137,12 @@ class Test_008_Employee:
         driver.save_screenshot("./Screenshots/Employee/4_Update_Employee.png")
         self.logger.info("*** UPDATED Designation SUCCESSFULLY ***")
 
-        # Optionally: Delete Employee
-        delete_name = ExcelUtils.readData(self.path, 'employee', 8, 5)
-        employee_page.SearchField(delete_name)
-        time.sleep(2)
-        employee_page.DeleteEmployee()
-        driver.save_screenshot("./Screenshots/Employee/5_Delete_Employee.png")
-        employee_page.DeleteConfirm()
-        time.sleep(2)
+        # # Optionally: Delete Employee
+        # delete_name = ExcelUtils.readData(self.path, 'employee', 8, 5)
+        # employee_page.SearchField(delete_name)
+        # time.sleep(2)
+        # employee_page.DeleteEmployee()
+        # driver.save_screenshot("./Screenshots/Employee/5_Delete_Employee.png")
+        # employee_page.DeleteConfirm()
+        # time.sleep(2)
 
