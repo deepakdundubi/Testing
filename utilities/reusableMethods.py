@@ -1,6 +1,7 @@
 import os
 import time
 from os import times
+from tkinter.tix import Select
 
 from pageObjects.Homepage import HomePage
 from pageObjects.LoginPage import LoginPage
@@ -49,6 +50,15 @@ class GenericUtils:
         time.sleep(2)
         click_result_fn()
         time.sleep(2)
+
+class StaticDropdown:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def select_by_visible_text(self, locator, text):
+        dropdown = self.driver.find_element(*locator)
+        Select(dropdown).select_by_visible_text(text)
+
 
 
 

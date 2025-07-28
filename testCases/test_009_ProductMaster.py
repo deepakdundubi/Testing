@@ -9,6 +9,7 @@ from utilities.customeLogger import LogGen
 from utilities.readProperties import ReadConfig
 from utilities.reusableMethods import page_URL_Verification
 from utilities.reusableMethods import GenericUtils
+from utilities.reusableMethods import StaticDropdown
 
 
 class Test_009_ProductMaster:
@@ -47,6 +48,14 @@ class Test_009_ProductMaster:
 
         productMaster_page = ProductMaster(driver)
         productMaster_page.ClickOnNew()
+
+        productMaster_page.ProductType(ExcelUtils.readData(self.path, 'product', 3, 2))
+        time.sleep(10)
+
+
+
+
+
 
 
 

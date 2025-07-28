@@ -9,15 +9,9 @@ class ProductMaster:
     def ClickOnNew(self):
         self.driver.find_element(By.XPATH, "//span[text()='+ Add New']").click()
 
-    def ProductType(self):
-        self.driver.find_element(By.XPATH, "//span[@aria-label='Select Type']").click()
+    def ProductType(self,Type):
+        self.driver.find_element(By.XPATH, "//span[@aria-label='Select Type']").select_by_visible_text(Type)
 
-    def ProductTypeSearch(self, ProductTypeSearch):
-        self.driver.find_element(By.XPATH, "//body[1]/div[2]/div[1]/div[1]/input[1]").clear()
-        self.driver.find_element(By.XPATH, "//body[1]/div[2]/div[1]/div[1]/input[1]").send_keys(ProductTypeSearch)
-
-    def ProductSelectFromDropdown(self):
-        self.driver.find_element(By.XPATH, "//li[@id='Type_0']").click()
 
     def ItemName(self,ItemName):
         self.driver.find_element(By.XPATH,"//input[@id='item_name']").send_keys(ItemName)
@@ -66,7 +60,7 @@ class ProductMaster:
         self.driver.find_element(By.XPATH, "//textarea[@id='description']").send_keys(Description)
 
 
-    def MRP(self, MRP):
+    def EnterMRP(self, MRP):
         self.driver.find_element(By.XPATH, "//input[@id='mrp']").clear()
         self.driver.find_element(By.XPATH, "//input[@id='mrp']").send_keys(MRP)
 
@@ -85,6 +79,11 @@ class ProductMaster:
     def get_Wholesale_price(self):
         Wholesales_price= self.driver.find_element(By.XPATH ,"//input[@id='sales_price']")
         return float(Wholesales_price.get_attribute("value"))
+
+    def purchase_price(self,PurchasePrie):
+        self.driver.find_element(By.XPATH, "//input[@id='purchase_price']").clear()
+        self.driver.find_element(By.XPATH,"//input[@id='purchase_price']").send_keys(PurchasePrie)
+
 
 
     def ClickOnSave(self):
